@@ -1,0 +1,13 @@
+			//获取当前定位通道
+			plus.geolocation.getCurrentPosition(MapPoint, function(e) {
+				mui.toast("error:" + e.message);
+			})
+      
+      		//获取当前定位函数
+		function MapPoint(position) {
+			address.Province = position.address.province
+			address.City = position.address.city
+			address.Country = position.address.district + "," + position.address.street + "," + position.address.streetNum;
+			address.longitude = position.coords.longitude + ""; //获取经度
+			address.latitude = position.coords.latitude + ""; //获取纬度
+		}
